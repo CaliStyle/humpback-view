@@ -1,0 +1,36 @@
+{
+  "name": "sails-generate-humpback-view",
+  "version": "0.11.0",
+  "description": "sails generate humpback-view",
+  "main": "Generator.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "humpback-view",
+    "generator",
+    "sails",
+    "generate",
+    "plugin"
+  ],
+  "author": "scottBwyatt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CaliStyle/humpback-view.git"
+  },
+  "dependencies": {
+  	"lodash": ">=2.4.x",
+  	"merge-defaults": ">=0.1.0"
+  },
+  "devDependencies": {
+    "sails-generate": "*",
+    "reportback": "*",
+    "fs-extra": "*"
+  },
+  "sailsGenerator": {
+    "type": "humpback-view",
+    "behavior": "overrides `sails generate humpback-view`",
+    "sailsVersion": "~0.10.0"
+  }
+}
