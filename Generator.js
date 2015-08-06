@@ -58,15 +58,28 @@ module.exports = {
       createdAt: new Date()
     });
 
+    var args = scope.args[0].toLowerCase().split("/");
+
     // Decide the output filename for use in targets below:
-    scope.filename = scope.args[0];
+    scope.foldername = '';
+    scope.filename = args[args.length - 1];
+
+    if(args.length > 1){
+      scope.foldername = args.pop().join('/') + '/';
+    }else{
+      scope.foldername = '/'
+    } 
+
+    // Decide the output filename for use in targets below:
+    scope.filename = scope.args[0].toLowerCase(); 
 
     // Add other stuff to the scope for use in our templates:
-    scope.whatIsThis = 'an example file created at '+scope.createdAt;
+    scope.whatIsThis = 'A humpback-view created at '+scope.createdAt;
 
     // When finished, we trigger a callback with no error
     // to begin generating files/folders as specified by
     // the `targets` below.
+
     cb();
   },
 
@@ -88,10 +101,15 @@ module.exports = {
     // The `template` helper reads the specified template, making the
     // entire scope available to it (uses underscore/JST/ejs syntax).
     // Then the file is copied into the specified destination (on the left).
-    './:filename': { template: 'example.template.js' },
-
     // Creates a folder at a static path
-    './hey_look_a_folder': { folder: {} }
+    './assets/views/:foldername': { folder: {} },
+    './assets/views/:foldername:filename'+'.controllers.js': { template: 'controllers.template.js'  },
+    './assets/views/:foldername:filename'+'.states.js': { template: 'states.template.js'  },
+
+    './views/:foldername': { folder: {} },
+    './views/:foldername:filename'+'.ejs': { template: 'ejs.template.js' }
+
+    
 
   },
 

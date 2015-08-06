@@ -30,7 +30,7 @@
   },
   "sailsGenerator": {
     "type": "humpback-view",
-    "behavior": "overrides `sails generate humpback-view`",
+    "behavior": "overrides `sails generate sails-view`",
     "sailsVersion": "~0.10.0"
   }
 }
