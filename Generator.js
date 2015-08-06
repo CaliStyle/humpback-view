@@ -61,14 +61,10 @@ module.exports = {
     var args = scope.args[0].toLowerCase().split("/");
 
     // Decide the output filename for use in targets below:
-    scope.foldername = '';
     scope.filename = args[args.length - 1];
 
-    if(args.length > 1){
-      scope.foldername = args.pop().join('/') + '/';
-    }else{
-      scope.foldername = '/'
-    } 
+    scope.foldername = args.pop();
+    scope.foldername = scope.foldername.join('/') + '/';
 
     // Decide the output filename for use in targets below:
     scope.filename = scope.args[0].toLowerCase(); 
