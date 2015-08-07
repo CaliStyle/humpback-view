@@ -95,8 +95,8 @@ module.exports = {
     // Then the file is copied into the specified destination (on the left).
     // Creates a folder at a static path
     //'./assets/views/:foldername': { folder: {} },
-    './assets/views/:foldername:filename.controllers.js': { template: 'controllers.template.js'  },
-    './assets/views/:foldername:filename.states.js': { template: 'states.template.js'  },
+    './assets/app/views/:foldername:filename.controllers.js': { template: 'controllers.template.js'  },
+    './assets/app/views/:foldername:filename.states.js': { template: 'states.template.js'  },
 
     //'./views/:foldername': { folder: {} },
     './views/:foldername:filename.ejs': { template: 'ejs.template.js' }
