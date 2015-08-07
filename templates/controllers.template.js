@@ -7,7 +7,7 @@
 angular.module( 'humpback.views.<%= filename %>.controllers', [
 
 ])
-.controller( '<%= filename | capitalize %>Ctrl', function <%= filename | capitalize %>Controller( $scope, DS ) {
+.controller( '<%= Filename %>Ctrl', function <%= Filename %>Controller( $scope, DS ) {
 
 
 });

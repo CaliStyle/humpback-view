@@ -61,7 +61,8 @@ module.exports = {
     var args = scope.args[0].toLowerCase().split("/");
 
     // Decide the output filename for use in targets below:
-    scope.filename = args[args.length - 1];;
+    scope.filename = args[args.length - 1];
+    scope.Filename = args[args.length - 1].charAt(0).toUpperCase() + args[args.length - 1].slice(1);
     scope.foldername = args.pop().length > 1 ? args.join('/') + '/' : args + '/';
 
     // Add other stuff to the scope for use in our templates:
