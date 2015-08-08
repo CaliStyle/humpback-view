@@ -1,6 +1,6 @@
 {
   "name": "sails-generate-humpback-view",
-  "version": "0.11.10",
+  "version": "0.11.11",
   "description": "sails generate humpback-view",
   "main": "Generator.js",
   "scripts": {
