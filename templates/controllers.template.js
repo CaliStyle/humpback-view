@@ -4,10 +4,10 @@
  * <%= whatIsThis %>.
  */
 
-angular.module( 'humpback.views.<%= filename %>.controllers', [
+angular.module( 'humpback.views.<%= statename %>.controllers', [
 
 ])
-.controller( '<%= Filename %>Ctrl', function <%= Filename %>Controller( $scope, DS ) {
+.controller( '<%= controllername %>Ctrl', function <%= controllername %>Controller( $scope, DS ) {
 
 
 });

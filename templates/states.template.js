@@ -4,7 +4,7 @@
  * <%= whatIsThis %>.
  */
 
-angular.module( 'humpback.views.<%= filename %>.states', [
+angular.module( 'humpback.views.<%= statename %>.states', [
 
 ])
 .config(function config( $stateProvider, $urlRouterProvider) {
