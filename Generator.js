@@ -64,7 +64,7 @@ module.exports = {
     scope.filename = args.length > 1 ? args[args.length - 1] : 'index';
     scope.statename = args[args.length - 1];
     scope.controllername = args[args.length - 1].charAt(0).toUpperCase() + args[args.length - 1].slice(1);
-    scope.foldername = args.length > 1 ? args.pop().join('/') + '/' : args + '/';
+    scope.foldername = args.length > 1 ? args.slice(0, args.length - 1).join('/') + '/' : args + '/';
 
     // Add other stuff to the scope for use in our templates:
     scope.whatIsThis = 'A humpback-view created at '+scope.createdAt;
