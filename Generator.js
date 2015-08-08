@@ -59,9 +59,10 @@ module.exports = {
     });
 
     var args = scope.args[0].toLowerCase().split("/");
+    var filenameOverride = typeof scope.args[1] !== 'undefined' ? scope.args[1].toLowerCase() : null;
 
     // Decide the output filename for use in targets below:
-    scope.filename = args.length > 1 ? args[args.length - 1] : 'index';
+    scope.filename = filenameOverride ? filenameOverride : (args.length > 1 ? args[args.length - 1] : 'index');
     scope.statename = args[args.length - 1];
     scope.controllername = args[args.length - 1].charAt(0).toUpperCase() + args[args.length - 1].slice(1);
     scope.foldername = args.length > 1 ? args.slice(0, args.length - 1).join('/') + '/' : args + '/';
