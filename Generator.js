@@ -6,6 +6,12 @@ var util = require('util');
 var _ = require('lodash');
 _.defaults = require('merge-defaults');
 
+Array.prototype.stateUcase=function()
+{
+  for (i=0;i<this.length;i++){
+    this[i]=this[i].toUpperCase();
+  }
+};
 
 /**
  * sails-generate-humpback-view
@@ -58,15 +64,16 @@ module.exports = {
       createdAt: new Date()
     });
 
-    var args = scope.args[0].toLowerCase().split("/");
+    var args = scope.args[0].toLowerCase().split('/');
     var filenameOverride = typeof scope.args[1] !== 'undefined' ? scope.args[1].toLowerCase() : null;
 
     // Decide the output filename for use in targets below:
+    //scope.statename = args[args.length - 1];   
+    //scope.controllername = args[args.length - 1].charAt(0).toUpperCase() + args[args.length - 1].slice(1);
+    
     scope.filename = filenameOverride ? filenameOverride : (args.length > 1 ? args[args.length - 1] : 'index');
-    scope.statename = args[args.length - 1];
-    scope.controllername = args[args.length - 1].charAt(0).toUpperCase() + args[args.length - 1].slice(1);
     scope.foldername = args.length > 1 ? args.slice(0, args.length - 1).join('/') + '/' : args + '/';
-
+    scope.statename = args.stateUcase().join('');
     // Add other stuff to the scope for use in our templates:
     scope.whatIsThis = 'A humpback-view created at '+scope.createdAt;
 
