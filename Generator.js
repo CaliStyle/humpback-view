@@ -8,8 +8,9 @@ _.defaults = require('merge-defaults');
 
 Array.prototype.stateUcase = function(){
   for (i=0; i<this.length; i++){
-    this[i] = this[i].toUpperCase();
+    this[i] = this[i].charAt(0).toUpperCase() + this[i].substring(1);
   }
+  return this;
 };
 
 /**
@@ -64,9 +65,9 @@ module.exports = {
     });
 
     var args = scope.args[0].toLowerCase().split('/');
-    var filenameOverride = typeof scope.args[1] !== 'undefined' ? scope.args[1].toLowerCase() : null;
     var foldernameArgs = args.slice(0);
     var statenameArgs = args.slice(0);
+    var filenameOverride = typeof scope.args[1] !== 'undefined' ? scope.args[1].toLowerCase() : null;
     // Decide the output filename for use in targets below:
     //scope.statename = args[args.length - 1];   
     //scope.controllername = args[args.length - 1].charAt(0).toUpperCase() + args[args.length - 1].slice(1);
